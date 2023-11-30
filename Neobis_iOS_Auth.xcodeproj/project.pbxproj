@@ -13,6 +13,7 @@
 		BA375D592B186E3100A84675 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA375D572B186E3100A84675 /* LaunchScreen.storyboard */; };
 		BA375D622B187B4100A84675 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA375D612B187B4100A84675 /* SnapKit */; };
 		BA375D642B187B4100A84675 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BA375D632B187B4100A84675 /* SnapKit-Dynamic */; };
+		BA375D682B18A30100A84675 /* splashScreen.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BA375D672B18A30100A84675 /* splashScreen.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		BA375D552B186E3100A84675 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA375D582B186E3100A84675 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA375D5A2B186E3100A84675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA375D672B18A30100A84675 /* splashScreen.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = splashScreen.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +63,17 @@
 				BA375D552B186E3100A84675 /* Assets.xcassets */,
 				BA375D572B186E3100A84675 /* LaunchScreen.storyboard */,
 				BA375D5A2B186E3100A84675 /* Info.plist */,
+				BA375D692B18A34E00A84675 /* Resources */,
 			);
 			path = Neobis_iOS_Auth;
+			sourceTree = "<group>";
+		};
+		BA375D692B18A34E00A84675 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BA375D672B18A30100A84675 /* splashScreen.pdf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA375D682B18A30100A84675 /* splashScreen.pdf in Resources */,
 				BA375D592B186E3100A84675 /* LaunchScreen.storyboard in Resources */,
 				BA375D562B186E3100A84675 /* Assets.xcassets in Resources */,
 			);
@@ -291,7 +303,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Neobis_iOS_Auth/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -321,7 +333,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Neobis_iOS_Auth/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
