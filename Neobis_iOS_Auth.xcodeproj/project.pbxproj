@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		BA375D4D2B186E2F00A84675 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA375D4C2B186E2F00A84675 /* AppDelegate.swift */; };
-		BA375D512B186E2F00A84675 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA375D502B186E2F00A84675 /* ViewController.swift */; };
+		BA375D512B186E2F00A84675 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA375D502B186E2F00A84675 /* LoginViewController.swift */; };
 		BA375D562B186E3100A84675 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA375D552B186E3100A84675 /* Assets.xcassets */; };
 		BA375D592B186E3100A84675 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA375D572B186E3100A84675 /* LaunchScreen.storyboard */; };
 		BA375D622B187B4100A84675 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA375D612B187B4100A84675 /* SnapKit */; };
 		BA375D642B187B4100A84675 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BA375D632B187B4100A84675 /* SnapKit-Dynamic */; };
-		BA375D682B18A30100A84675 /* splashScreen.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BA375D672B18A30100A84675 /* splashScreen.pdf */; };
+		BA375D712B18A6E900A84675 /* RegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA375D702B18A6E900A84675 /* RegViewController.swift */; };
+		BA375D752B18A85B00A84675 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA375D742B18A85B00A84675 /* ConfirmViewController.swift */; };
+		BA375D792B18A8A100A84675 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA375D782B18A8A100A84675 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BA375D492B186E2F00A84675 /* Neobis_iOS_Auth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neobis_iOS_Auth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA375D4C2B186E2F00A84675 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA375D502B186E2F00A84675 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA375D502B186E2F00A84675 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BA375D552B186E3100A84675 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA375D582B186E3100A84675 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA375D5A2B186E3100A84675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA375D672B18A30100A84675 /* splashScreen.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = splashScreen.pdf; sourceTree = "<group>"; };
+		BA375D702B18A6E900A84675 /* RegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewController.swift; sourceTree = "<group>"; };
+		BA375D742B18A85B00A84675 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
+		BA375D782B18A8A100A84675 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,11 +63,16 @@
 			isa = PBXGroup;
 			children = (
 				BA375D4C2B186E2F00A84675 /* AppDelegate.swift */,
-				BA375D502B186E2F00A84675 /* ViewController.swift */,
+				BA375D7D2B18A8DC00A84675 /* ViewModel */,
+				BA375D7C2B18A8D200A84675 /* Models */,
+				BA375D6A2B18A51600A84675 /* Login */,
+				BA375D6B2B18A51E00A84675 /* Registration */,
+				BA375D6C2B18A59F00A84675 /* Confirmation */,
+				BA375D6D2B18A66100A84675 /* Welcome */,
+				BA375D692B18A34E00A84675 /* Resources */,
 				BA375D552B186E3100A84675 /* Assets.xcassets */,
 				BA375D572B186E3100A84675 /* LaunchScreen.storyboard */,
 				BA375D5A2B186E3100A84675 /* Info.plist */,
-				BA375D692B18A34E00A84675 /* Resources */,
 			);
 			path = Neobis_iOS_Auth;
 			sourceTree = "<group>";
@@ -71,9 +80,54 @@
 		BA375D692B18A34E00A84675 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BA375D672B18A30100A84675 /* splashScreen.pdf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BA375D6A2B18A51600A84675 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BA375D502B186E2F00A84675 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BA375D6B2B18A51E00A84675 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				BA375D702B18A6E900A84675 /* RegViewController.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		BA375D6C2B18A59F00A84675 /* Confirmation */ = {
+			isa = PBXGroup;
+			children = (
+				BA375D742B18A85B00A84675 /* ConfirmViewController.swift */,
+			);
+			path = Confirmation;
+			sourceTree = "<group>";
+		};
+		BA375D6D2B18A66100A84675 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				BA375D782B18A8A100A84675 /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		BA375D7C2B18A8D200A84675 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BA375D7D2B18A8DC00A84675 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +195,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA375D682B18A30100A84675 /* splashScreen.pdf in Resources */,
 				BA375D592B186E3100A84675 /* LaunchScreen.storyboard in Resources */,
 				BA375D562B186E3100A84675 /* Assets.xcassets in Resources */,
 			);
@@ -154,8 +207,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA375D512B186E2F00A84675 /* ViewController.swift in Sources */,
+				BA375D512B186E2F00A84675 /* LoginViewController.swift in Sources */,
+				BA375D792B18A8A100A84675 /* WelcomeViewController.swift in Sources */,
 				BA375D4D2B186E2F00A84675 /* AppDelegate.swift in Sources */,
+				BA375D752B18A85B00A84675 /* ConfirmViewController.swift in Sources */,
+				BA375D712B18A6E900A84675 /* RegViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

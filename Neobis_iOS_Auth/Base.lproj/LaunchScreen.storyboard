@@ -16,13 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="splashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="V0b-sf-AjC">
-                                <rect key="frame" x="0.0" y="-6" width="393" height="865"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="splashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="GCk-cf-A6A">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GCk-cf-A6A" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="2gn-UH-ZOj"/>
+                            <constraint firstAttribute="bottom" secondItem="GCk-cf-A6A" secondAttribute="bottom" id="CeV-rc-iA9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GCk-cf-A6A" secondAttribute="trailing" id="Dif-fY-Q7e"/>
+                            <constraint firstItem="GCk-cf-A6A" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Uea-DJ-uaL"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
