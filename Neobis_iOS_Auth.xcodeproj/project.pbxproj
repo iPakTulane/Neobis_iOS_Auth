@@ -14,8 +14,10 @@
 		BA375D622B187B4100A84675 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA375D612B187B4100A84675 /* SnapKit */; };
 		BA375D642B187B4100A84675 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BA375D632B187B4100A84675 /* SnapKit-Dynamic */; };
 		BA375D712B18A6E900A84675 /* RegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA375D702B18A6E900A84675 /* RegViewController.swift */; };
-		BA375D752B18A85B00A84675 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA375D742B18A85B00A84675 /* ConfirmViewController.swift */; };
+		BA375D752B18A85B00A84675 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA375D742B18A85B00A84675 /* ConfirmationViewController.swift */; };
 		BA375D792B18A8A100A84675 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA375D782B18A8A100A84675 /* WelcomeViewController.swift */; };
+		BA375D7F2B18F36500A84675 /* LogoutAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA375D7E2B18F36500A84675 /* LogoutAlertView.swift */; };
+		BA375D812B1CFA7B00A84675 /* EmailAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA375D802B1CFA7B00A84675 /* EmailAlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +28,10 @@
 		BA375D582B186E3100A84675 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA375D5A2B186E3100A84675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA375D702B18A6E900A84675 /* RegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegViewController.swift; sourceTree = "<group>"; };
-		BA375D742B18A85B00A84675 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
+		BA375D742B18A85B00A84675 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		BA375D782B18A8A100A84675 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		BA375D7E2B18F36500A84675 /* LogoutAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertView.swift; sourceTree = "<group>"; };
+		BA375D802B1CFA7B00A84675 /* EmailAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +107,8 @@
 		BA375D6C2B18A59F00A84675 /* Confirmation */ = {
 			isa = PBXGroup;
 			children = (
-				BA375D742B18A85B00A84675 /* ConfirmViewController.swift */,
+				BA375D742B18A85B00A84675 /* ConfirmationViewController.swift */,
+				BA375D802B1CFA7B00A84675 /* EmailAlertView.swift */,
 			);
 			path = Confirmation;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				BA375D782B18A8A100A84675 /* WelcomeViewController.swift */,
+				BA375D7E2B18F36500A84675 /* LogoutAlertView.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -210,8 +216,10 @@
 				BA375D512B186E2F00A84675 /* LoginViewController.swift in Sources */,
 				BA375D792B18A8A100A84675 /* WelcomeViewController.swift in Sources */,
 				BA375D4D2B186E2F00A84675 /* AppDelegate.swift in Sources */,
-				BA375D752B18A85B00A84675 /* ConfirmViewController.swift in Sources */,
+				BA375D752B18A85B00A84675 /* ConfirmationViewController.swift in Sources */,
 				BA375D712B18A6E900A84675 /* RegViewController.swift in Sources */,
+				BA375D812B1CFA7B00A84675 /* EmailAlertView.swift in Sources */,
+				BA375D7F2B18F36500A84675 /* LogoutAlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

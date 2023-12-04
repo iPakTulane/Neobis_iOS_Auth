@@ -1,5 +1,5 @@
 //
-//  WelcomeViewController.swift
+//  ConfirmationViewController.swift
 //  Neobis_iOS_Auth
 //
 //  Created by iPak Tulane on 30/11/23.
@@ -8,14 +8,16 @@
 import UIKit
 import SnapKit
 
-class WelcomeViewController: UIViewController {
+class ConfirmationViewController: UIViewController {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.font = UIFont.boldSystemFont(ofSize: 45)
+        label.font = UIFont.boldSystemFont(ofSize: 25)
         label.textColor = .black
+        label.numberOfLines = 0
         label.textAlignment = .center
-        label.text = "Welcome!"
+        label.text = "We've sent you a message with reference for you to complete registration to your email"
+//        label.text = "We've sent you an email with reference for you to complete registration to \(email)"
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
@@ -23,25 +25,32 @@ class WelcomeViewController: UIViewController {
     lazy var subtitleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = UIFont.systemFont(ofSize: 20)
-        label.textColor = .black
+        label.textColor = .darkGray
+        label.numberOfLines = 0
         label.textAlignment = .center
-        label.text = "Lorby is your personal tutor"
+        label.text = """
+        If you don't see our message,
+        don't waste your time and
+        better check your Spam box
+        
+        (´○• ω •○`)
+        """
         return label
     }()
     
-    lazy var welcomeImage: UIImageView = {
-        let image = UIImage(named: "welcome")
+    lazy var emailImage: UIImageView = {
+        let image = UIImage(named: "checkEmail")
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
-    lazy var logoutButton: UIButton = {
+    lazy var noEmailButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Log out", for: .normal)
+        button.setTitle("Email didn't come", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(logoutDidTap), for: .touchUpInside)
+        button.addTarget(self, action: #selector(noEmailDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -53,8 +62,8 @@ class WelcomeViewController: UIViewController {
     }()
 
     
-    lazy var alertView: LogoutAlertView = {
-        let alertView = LogoutAlertView()
+    lazy var alertView: EmailAlertView = {
+        let alertView = EmailAlertView()
         alertView.backgroundColor = .white
         alertView.alpha = 1.0
         alertView.isHidden = true
@@ -73,8 +82,8 @@ class WelcomeViewController: UIViewController {
         view.addSubview(containerView)
         containerView.addSubview(titleLabel)
         containerView.addSubview(subtitleLabel)
-        containerView.addSubview(welcomeImage)
-        containerView.addSubview(logoutButton)
+        containerView.addSubview(emailImage)
+        containerView.addSubview(noEmailButton)
         view.addSubview(alertView)
     }
     
@@ -91,32 +100,32 @@ class WelcomeViewController: UIViewController {
         // titleLabel
         titleLabel.snp.makeConstraints{ make in
             make.centerX.equalTo(containerView.snp.centerX)
-            make.top.equalTo(containerView.snp.top).offset(130)
-            make.width.equalTo(275)
-            make.height.equalTo(35)
+            make.top.equalTo(containerView.snp.top).offset(100)
+            make.left.equalTo(containerView.snp.top).offset(20)
+            make.right.equalTo(containerView.snp.right).offset(-20)
         }
         
         // subtitleLabel
         subtitleLabel.snp.makeConstraints{ make in
             make.centerX.equalTo(containerView.snp.centerX)
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
-            make.width.equalTo(310)
-            make.height.equalTo(30)
+            make.top.equalTo(titleLabel.snp.bottom).offset(25)
+            make.left.equalTo(containerView.snp.top).offset(20)
+            make.right.equalTo(containerView.snp.right).offset(-20)
         }
         
-        // welcomeImage
-        welcomeImage.snp.makeConstraints{ make in
+        // emailImage
+        emailImage.snp.makeConstraints{ make in
             make.centerX.equalTo(containerView.snp.centerX)
-            make.centerY.equalTo(containerView.snp.centerY)
+            make.top.equalTo(subtitleLabel.snp.bottom).offset(35)
             make.width.height.equalTo(315)
         }
         
-        // logoutButton
-        logoutButton.snp.makeConstraints{ make in
+        // noEmailButton
+        noEmailButton.snp.makeConstraints{ make in
             make.centerX.equalTo(containerView.snp.centerX)
-            make.bottom.equalTo(containerView.snp.bottom).offset(-75)
-            make.width.equalTo(300)
-            make.height.equalTo(25)
+            make.bottom.equalTo(containerView.snp.bottom).offset(-30)
+            make.left.equalTo(containerView.snp.top).offset(20)
+            make.right.equalTo(containerView.snp.right).offset(-20)
         }
     }
     
@@ -131,20 +140,17 @@ class WelcomeViewController: UIViewController {
         }
         
         // Add targets
-        alertView.yesButton.addTarget(self, action: #selector(yesButtonTapped), for: .touchUpInside)
-        alertView.noButton.addTarget(self, action: #selector(noButtonTapped), for: .touchUpInside)
+        alertView.okButton.addTarget(self, action: #selector(okButtonTapped), for: .touchUpInside)
                 
-        // Set actions for "Yes" and "No" buttons
-        alertView.yesAction = {
-            print("Yes tapped")
+        // Set actions for "OK" buttons
+        alertView.okAction = {
+            print("OK tapped")
         }
-        alertView.noAction = {
-            print("No tapped")
-        }
+
     }
     
 
-    @objc func logoutDidTap() {
+    @objc func noEmailDidTap() {
         showAlert()
     }
     
@@ -158,15 +164,12 @@ class WelcomeViewController: UIViewController {
         view.bringSubviewToFront(alertView)
     }
     
-    @objc func yesButtonTapped() {
-//        self.dismiss(animated: true, completion: nil)
-        let vc = ConfirmationViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
-    }
-    
-    @objc func noButtonTapped() {
-        printContent("User wants to stay")
+    @objc func okButtonTapped() {
+        printContent("User understood the spam note")
+        self.dismiss(animated: true, completion: nil)
+//        let vc = LoginViewController()
+//        vc.modalPresentationStyle = .fullScreen
+//        present(vc, animated: true, completion: nil)
     }
     
 }
