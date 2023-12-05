@@ -16,24 +16,26 @@ class ConfirmationViewController: UIViewController {
         label.textColor = .black
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.text = "We've sent you a message with reference for you to complete registration to your email"
-//        label.text = "We've sent you an email with reference for you to complete registration to \(email)"
+        label.text = """
+        We've sent a request 
+        for you to confirm registration
+        on your email
+        """
+        //        label.text = "We've sent a request for you to confirm registration on \(email)
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
     lazy var subtitleLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 17)
         label.textColor = .darkGray
         label.numberOfLines = 0
         label.textAlignment = .center
         label.text = """
-        If you don't see our message,
-        don't waste your time and
-        better check your Spam box
+        If you don't see our request, don't waste your time and better check your Spam
         
-        (´○• ω •○`)
+        (´○•ω•○`)
         """
         return label
     }()
@@ -48,7 +50,7 @@ class ConfirmationViewController: UIViewController {
     lazy var noEmailButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Email didn't come", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(noEmailDidTap), for: .touchUpInside)
         return button
@@ -100,8 +102,8 @@ class ConfirmationViewController: UIViewController {
         // titleLabel
         titleLabel.snp.makeConstraints{ make in
             make.centerX.equalTo(containerView.snp.centerX)
-            make.top.equalTo(containerView.snp.top).offset(100)
-            make.left.equalTo(containerView.snp.top).offset(20)
+            make.top.equalTo(containerView.snp.top).offset(150)
+            make.left.equalTo(containerView.snp.left).offset(20)
             make.right.equalTo(containerView.snp.right).offset(-20)
         }
         
@@ -109,7 +111,7 @@ class ConfirmationViewController: UIViewController {
         subtitleLabel.snp.makeConstraints{ make in
             make.centerX.equalTo(containerView.snp.centerX)
             make.top.equalTo(titleLabel.snp.bottom).offset(25)
-            make.left.equalTo(containerView.snp.top).offset(20)
+            make.left.equalTo(containerView.snp.left).offset(20)
             make.right.equalTo(containerView.snp.right).offset(-20)
         }
         
@@ -123,8 +125,8 @@ class ConfirmationViewController: UIViewController {
         // noEmailButton
         noEmailButton.snp.makeConstraints{ make in
             make.centerX.equalTo(containerView.snp.centerX)
-            make.bottom.equalTo(containerView.snp.bottom).offset(-30)
-            make.left.equalTo(containerView.snp.top).offset(20)
+            make.bottom.equalTo(containerView.snp.bottom).offset(-60)
+            make.left.equalTo(containerView.snp.left).offset(20)
             make.right.equalTo(containerView.snp.right).offset(-20)
         }
     }
