@@ -18,9 +18,9 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         
         scrollView.frame = view.bounds
         
-                scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         
-//        scrollView.contentSize = CGSize(width: 1000, height: 1000)
+        //        scrollView.contentSize = CGSize(width: 1000, height: 1000)
         
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 1.0
@@ -52,14 +52,11 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         field.layer.cornerRadius = 8
         field.layer.borderWidth = 0
         field.layer.borderColor = UIColor.label.cgColor
-        
         // Add clear button
         field.clearButtonMode = .always
-        
         // Create a left view with an offset
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: field.frame.height))
         field.leftView = leftView
-        
         // Ensure the left and right views are always visible
         field.leftViewMode = .always
         field.rightViewMode = .always
@@ -95,11 +92,9 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         field.layer.cornerRadius = 8
         field.layer.borderWidth = 0
         field.layer.borderColor = UIColor.label.cgColor
-        
         // Add toggle button for password visibility
         field.rightViewMode = .whileEditing
         field.rightView = createPasswordVisibilityButton()
-        
         // Create a left view with an offset
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: field.frame.height))
         field.leftView = leftView
@@ -119,11 +114,10 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         let label = UILabel(frame: .zero)
         label.font = UIFont.systemFont(ofSize: 15)
         label.textColor = .lightGray
-//        label.textColor = .systemGreen
+        //        label.textColor = .systemGreen
         label.textAlignment = .left
         label.text = "• From 8 to 15 characters"
-//        label.text = "• From 8 to 15 characters ✅"
-        //        label.text = "• From 8 to 15 characters \(checkSign)"
+        //        label.text = "• From 8 to 15 characters ✅"
         return label
     }()
     
@@ -131,9 +125,10 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         let label = UILabel(frame: .zero)
         label.font = UIFont.systemFont(ofSize: 15)
         label.textColor = .lightGray
+        //        label.textColor = .systemGreen
         label.textAlignment = .left
         label.text = "• Lowercase and uppercase letters"
-        //        label.text = "• Lowercase and uppercase letters \(checkSign)"
+        //        label.text = "• Lowercase and uppercase letters ✅"
         return label
     }()
     
@@ -141,9 +136,11 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         let label = UILabel(frame: .zero)
         label.font = UIFont.systemFont(ofSize: 15)
         label.textColor = .lightGray
+        //        label.textColor = .red
         label.textAlignment = .left
         label.text = "• At least one digit"
-        //        label.text = "• At least one digit \(checkSign)"
+        //        label.text = "• At least one digit ❌"
+        //        label.text = "• At least one digit ✅"
         return label
     }()
     
@@ -151,9 +148,10 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         let label = UILabel(frame: .zero)
         label.font = UIFont.systemFont(ofSize: 15)
         label.textColor = .lightGray
+        //        label.textColor = .systemGreen
         label.textAlignment = .left
         label.text = "• At least one special symbol (!, #, *, $, ...)"
-        //        label.text = "• At least one special symbol (!, #, $) \(checkSign)"
+        //        label.text = "• At least one special symbol (!, #, $) ✅"
         return label
     }()
     
@@ -195,15 +193,28 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
+        setupNavigation() // Remove this line from setupViews
         setupViews()
         setupConstraints()
         
         // Add keyboard observers
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     
     // MARK: - UI setup
+    
+    func setupNavigation() {
+        self.navigationItem.title = "Registration"
+        let backButton = UIBarButtonItem()
+        backButton.image = UIImage(named: "arrow")
+        backButton.tintColor = .black
+        // Set the target and action for the back button
+        backButton.target = self
+        backButton.action = #selector(backButtonTapped)
+        self.navigationItem.leftBarButtonItem = backButton
+    }
     
     func setupViews() {
         view.addSubview(scrollView)
@@ -211,7 +222,7 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         scrollView.addSubview(emailTextField)
         
         scrollView.addSubview(usernameTextField)
-
+        
         scrollView.addSubview(passwordTextField)
         
         scrollView.addSubview(containerView)
@@ -235,7 +246,7 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         // titleLabel
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(70)
+            make.top.equalToSuperview().inset(50)
             make.left.equalToSuperview().inset(15)
             make.right.equalToSuperview().inset(15)
             make.height.equalTo(100)
@@ -305,7 +316,6 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
             make.height.equalTo(20)
         }
         
-        
         // repeatPasswordTextField
         repeatPasswordTextField.snp.makeConstraints { make in
             make.top.equalTo(containerView.snp.bottom).offset(15)
@@ -332,9 +342,9 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         nextButton.setTitleColor(.white, for: .normal)
         nextButton.backgroundColor = .black
         
-        let vc = LoginViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        let viewController = ConfirmationViewController()
+        navigationController?.pushViewController(viewController, animated: true)
+        
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -374,6 +384,9 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-
+    @objc func backButtonTapped() {
+        // Handle back button tap
+        self.navigationController?.popViewController(animated: true)
+    }
     
 }

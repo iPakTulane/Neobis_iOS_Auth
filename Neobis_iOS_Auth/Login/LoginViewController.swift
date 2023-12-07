@@ -69,11 +69,9 @@ class LoginViewController: UIViewController {
         field.layer.cornerRadius = 8
         field.layer.borderWidth = 0
         field.layer.borderColor = UIColor.label.cgColor
-        
         // Add toggle button for password visibility
         field.rightViewMode = .whileEditing
         field.rightView = createPasswordVisibilityButton()
-        
         // Create a left view with an offset
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: field.frame.height))
         field.leftView = leftView
@@ -113,6 +111,8 @@ class LoginViewController: UIViewController {
     func setupViews() {
         // Setup backgorund color
         view.backgroundColor = .white
+        // Hide back button
+        self.navigationItem.hidesBackButton = true
         // Setup UI components
         view.addSubview(alertLabel)
         alertLabel.isHidden = true
@@ -195,10 +195,8 @@ class LoginViewController: UIViewController {
     }
     
     @objc func createDidTap() {
-//        alertLabel.isHidden = true
-        let vc = RegistrationViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        let viewController = RegistrationViewController()
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     
@@ -221,8 +219,6 @@ class LoginViewController: UIViewController {
             passwordTextField.isSecureTextEntry = true
         }
     }
-    
-    
     
 }
 

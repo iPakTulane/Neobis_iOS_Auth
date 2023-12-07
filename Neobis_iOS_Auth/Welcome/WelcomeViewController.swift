@@ -159,17 +159,26 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc func yesButtonTapped() {
-//        self.dismiss(animated: true, completion: nil)
-        let vc = LoginViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        
+        self.dismiss(animated: true)
+        
+        let viewController = LoginViewController()
+        navigationController?.pushViewController(viewController, animated: true)
+        
     }
     
     @objc func noButtonTapped() {
-//        dismiss(animated: true)
-        let vc = WelcomeViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        // containerView
+        containerView.backgroundColor = .white
+        containerView.alpha = 1.0
+        // alertView
+        alertView.isHidden = true
+        
+//        self.dismiss(animated: true)
+        
+//        let viewController = WelcomeViewController()
+//        navigationController?.pushViewController(viewController, animated: true)
+        
     }
     
 }

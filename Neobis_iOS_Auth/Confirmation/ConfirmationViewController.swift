@@ -29,7 +29,7 @@ class ConfirmationViewController: UIViewController {
         label.numberOfLines = 0
         label.textAlignment = .center
         label.text = """
-        If you don't see it so long, don't waste your time and better check your Spam
+        If you don't see it so far, don't waste your time and better check your Spam
         
         (´￮•ω•￮`)
         """
@@ -77,6 +77,8 @@ class ConfirmationViewController: UIViewController {
     
     func setupViews() {
         view.backgroundColor = .white
+        // Hide back button
+        self.navigationItem.hidesBackButton = true
         view.addSubview(containerView)
         containerView.addSubview(titleLabel)
         containerView.addSubview(subtitleLabel)
@@ -163,10 +165,10 @@ class ConfirmationViewController: UIViewController {
     }
     
     @objc func okButtonTapped() {
-//        self.dismiss(animated: true, completion: nil)
-        let vc = LoginViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        
+        let viewController = LoginViewController()
+        navigationController?.pushViewController(viewController, animated: true)
+        
     }
     
 }
