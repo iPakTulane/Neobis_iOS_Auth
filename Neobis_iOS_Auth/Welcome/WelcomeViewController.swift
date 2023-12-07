@@ -160,13 +160,16 @@ class WelcomeViewController: UIViewController {
     
     @objc func yesButtonTapped() {
 //        self.dismiss(animated: true, completion: nil)
-        let vc = ConfirmationViewController()
+        let vc = LoginViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
     
     @objc func noButtonTapped() {
-        printContent("User wants to stay")
+//        dismiss(animated: true)
+        let vc = WelcomeViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
     
 }

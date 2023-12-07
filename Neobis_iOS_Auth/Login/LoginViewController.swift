@@ -39,10 +39,9 @@ class LoginViewController: UIViewController {
         return label
     }()
     
-    lazy var loginTextField: UITextField = {
+    lazy var usernameTextField: UITextField = {
         let field = UITextField()
-        field.translatesAutoresizingMaskIntoConstraints = false
-        field.placeholder = "Enter login"
+        field.placeholder = "Enter username"
         field.autocapitalizationType = .none
         field.autocorrectionType = .no
         field.backgroundColor = .secondarySystemBackground
@@ -67,7 +66,6 @@ class LoginViewController: UIViewController {
     
     lazy var passwordTextField: UITextField = {
         let field = UITextField()
-        field.translatesAutoresizingMaskIntoConstraints = false
         field.placeholder = "Enter password"
         field.autocapitalizationType = .none
         field.autocorrectionType = .no
@@ -85,7 +83,7 @@ class LoginViewController: UIViewController {
     
     lazy var discloseButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "eyeOpened"), for: .normal)
+        button.setImage(UIImage(named: "eyeClosed"), for: .normal)
         button.tintColor = .lightGray
         button.addTarget(self, action: #selector(discloseDidTap), for: .touchUpInside)
         return button
@@ -126,9 +124,9 @@ class LoginViewController: UIViewController {
         alertLabel.isHidden = true
         view.addSubview(globeImage)
         view.addSubview(titleLabel)
-        view.addSubview(loginTextField)
-        loginTextField.rightView = deleteButton
-        loginTextField.rightViewMode = .always
+        view.addSubview(usernameTextField)
+        usernameTextField.rightView = deleteButton
+        usernameTextField.rightViewMode = .always
         view.addSubview(passwordTextField)
         passwordTextField.rightView = discloseButton
         passwordTextField.rightViewMode = .always
@@ -161,24 +159,24 @@ class LoginViewController: UIViewController {
             make.height.equalTo(40)
         }
         
-        // loginTextField
-        loginTextField.snp.makeConstraints{ make in
+        // usernameTextField
+        usernameTextField.snp.makeConstraints{ make in
             make.centerX.equalToSuperview()
             make.top.equalTo(titleLabel.snp.bottom).offset(40)
             make.width.equalTo(340)
             make.height.equalTo(45)
         }
         
-        // deleteButton (w/in loginTextField)
+        // deleteButton (w/in usernameTextField)
         deleteButton.snp.makeConstraints{ make in
-//            make.centerY.equalTo(loginTextField.snp.centerY)
+//            make.centerY.equalTo(usernameTextField.snp.centerY)
             make.width.height.equalTo(40)
         }
         
         // passwordTextField
         passwordTextField.snp.makeConstraints{ make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(loginTextField.snp.bottom).offset(20)
+            make.top.equalTo(usernameTextField.snp.bottom).offset(20)
             make.width.equalTo(340)
             make.height.equalTo(45)
         }
@@ -209,15 +207,15 @@ class LoginViewController: UIViewController {
     
 
     @objc func deleteDidTap() {
-        loginTextField.text = ""
+        usernameTextField.text = ""
     }
     
     @objc func discloseDidTap() {
         discloseButton.setImage(UIImage(named: "eyeClosed"), for: .normal)
-//        if discloseButton.imageView == UIImage(named: "eyeOpened") {
-//            discloseButton.setImage(UIImage(named: "eyeClosed"), for: .normal)
-//        } else {
+//        if discloseButton.imageView == UIImage(named: "eyeClosed") {
 //            discloseButton.setImage(UIImage(named: "eyeOpened"), for: .normal)
+//        } else {
+//            discloseButton.setImage(UIImage(named: "eyeClosed"), for: .normal)
 //        }
     }
     
@@ -231,10 +229,11 @@ class LoginViewController: UIViewController {
     }
     
     @objc func createDidTap() {
-        alertLabel.isHidden = false
+//        alertLabel.isHidden = true
+        let vc = RegistrationViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
-    
-    
     
 }
 

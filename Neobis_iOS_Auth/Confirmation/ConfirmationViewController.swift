@@ -16,11 +16,7 @@ class ConfirmationViewController: UIViewController {
         label.textColor = .black
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.text = """
-        We've sent a request 
-        for you to confirm registration
-        on your email
-        """
+        label.text = "We've sent a request \nfor you to confirm registration \non your email"
         //        label.text = "We've sent a request for you to confirm registration on \(email)
         label.adjustsFontSizeToFitWidth = true
         return label
@@ -33,9 +29,9 @@ class ConfirmationViewController: UIViewController {
         label.numberOfLines = 0
         label.textAlignment = .center
         label.text = """
-        If you don't see our request, don't waste your time and better check your Spam
+        If you don't see it so long, don't waste your time and better check your Spam
         
-        (´○•ω•○`)
+        (´￮•ω•￮`)
         """
         return label
     }()
@@ -167,11 +163,10 @@ class ConfirmationViewController: UIViewController {
     }
     
     @objc func okButtonTapped() {
-        printContent("User understood the spam note")
-        self.dismiss(animated: true, completion: nil)
-//        let vc = LoginViewController()
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc, animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        let vc = LoginViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
     
 }
