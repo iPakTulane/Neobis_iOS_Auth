@@ -48,21 +48,17 @@ class LoginViewController: UIViewController {
         field.layer.cornerRadius = 8
         field.layer.borderWidth = 0
         field.layer.borderColor = UIColor.label.cgColor
+        // Add clear button
+        field.clearButtonMode = .always
         // Create a left view with an offset
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: field.frame.height))
         field.leftView = leftView
-        // Ensure the left view is always visible
+        // Ensure the left and right views are always visible
         field.leftViewMode = .always
+        field.rightViewMode = .always
         return field
     }()
     
-    lazy var deleteButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "delete"), for: .normal)
-        button.tintColor = .lightGray
-        button.addTarget(self, action: #selector(deleteDidTap), for: .touchUpInside)
-        return button
-    }()
     
     lazy var passwordTextField: UITextField = {
         let field = UITextField()
@@ -73,20 +69,18 @@ class LoginViewController: UIViewController {
         field.layer.cornerRadius = 8
         field.layer.borderWidth = 0
         field.layer.borderColor = UIColor.label.cgColor
+        
+        // Add toggle button for password visibility
+        field.rightViewMode = .whileEditing
+        field.rightView = createPasswordVisibilityButton()
+        
         // Create a left view with an offset
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: field.frame.height))
         field.leftView = leftView
-        // Ensure the left view is always visible
+        // Ensure the left and right views are always visible
         field.leftViewMode = .always
+        field.rightViewMode = .always
         return field
-    }()
-    
-    lazy var discloseButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "eyeClosed"), for: .normal)
-        button.tintColor = .lightGray
-        button.addTarget(self, action: #selector(discloseDidTap), for: .touchUpInside)
-        return button
     }()
 
     lazy var loginButton: UIButton = {
@@ -125,11 +119,9 @@ class LoginViewController: UIViewController {
         view.addSubview(globeImage)
         view.addSubview(titleLabel)
         view.addSubview(usernameTextField)
-        usernameTextField.rightView = deleteButton
-        usernameTextField.rightViewMode = .always
+
         view.addSubview(passwordTextField)
-        passwordTextField.rightView = discloseButton
-        passwordTextField.rightViewMode = .always
+
         view.addSubview(loginButton)
         view.addSubview(createButton)
     }
@@ -167,24 +159,12 @@ class LoginViewController: UIViewController {
             make.height.equalTo(45)
         }
         
-        // deleteButton (w/in usernameTextField)
-        deleteButton.snp.makeConstraints{ make in
-//            make.centerY.equalTo(usernameTextField.snp.centerY)
-            make.width.height.equalTo(40)
-        }
-        
         // passwordTextField
         passwordTextField.snp.makeConstraints{ make in
             make.centerX.equalToSuperview()
             make.top.equalTo(usernameTextField.snp.bottom).offset(20)
             make.width.equalTo(340)
             make.height.equalTo(45)
-        }
-        
-        // discloseButton (w/in passwordTextField)
-        discloseButton.snp.makeConstraints{ make in
-//            make.centerY.equalTo(passwordTextField.snp.centerY)
-            make.width.height.equalTo(40)
         }
         
         // loginButton
@@ -205,24 +185,10 @@ class LoginViewController: UIViewController {
         
     }
     
-
-    @objc func deleteDidTap() {
-        usernameTextField.text = ""
-    }
-    
-    @objc func discloseDidTap() {
-        discloseButton.setImage(UIImage(named: "eyeClosed"), for: .normal)
-//        if discloseButton.imageView == UIImage(named: "eyeClosed") {
-//            discloseButton.setImage(UIImage(named: "eyeOpened"), for: .normal)
-//        } else {
-//            discloseButton.setImage(UIImage(named: "eyeClosed"), for: .normal)
-//        }
-    }
     
     @objc func loginDidTap() {
 //        let vc = WelcomeViewController(vm: viewModel, welcomeViewController: self)
         let vc = WelcomeViewController()
-//        let vc = ConfirmationViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
         vc.titleLabel.text = "Welcome back!"
@@ -234,6 +200,29 @@ class LoginViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
+    
+    
+    // MARK: - Helper functions
+    
+    private func createPasswordVisibilityButton() -> UIButton {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "eyeClosed"), for: .normal)
+        button.setImage(UIImage(named: "eyeOpened"), for: .selected)
+        button.tintColor = .lightGray
+        button.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
+        return button
+    }
+    
+    @objc private func togglePasswordVisibility(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            passwordTextField.isSecureTextEntry = false
+        } else {
+            passwordTextField.isSecureTextEntry = true
+        }
+    }
+    
+    
     
 }
 

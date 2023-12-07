@@ -27,6 +27,8 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         scrollView.bounces = true
         scrollView.isDirectionalLockEnabled = false
         scrollView.contentInsetAdjustmentBehavior = .always
+        scrollView.isScrollEnabled = true
+        scrollView.isUserInteractionEnabled = true
         return scrollView
     }()
     
@@ -93,9 +95,11 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         field.layer.cornerRadius = 8
         field.layer.borderWidth = 0
         field.layer.borderColor = UIColor.label.cgColor
+        
         // Add toggle button for password visibility
         field.rightViewMode = .whileEditing
         field.rightView = createPasswordVisibilityButton()
+        
         // Create a left view with an offset
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: field.frame.height))
         field.leftView = leftView
@@ -181,7 +185,7 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         button.backgroundColor = .lightGray
         button.isReady = false
         button.layer.cornerRadius = 12
-        button.addTarget(self, action: #selector(nextDidTap), for: .touchUpInside)
+        button.addTarget(self, action: #selector(nextButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -324,6 +328,13 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
     @objc func nextButtonDidTap() {
         // Validate user input and check password strength
         // Implement logic for next button action
+        nextButton.isReady = true
+        nextButton.setTitleColor(.white, for: .normal)
+        nextButton.backgroundColor = .black
+        
+        let vc = LoginViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -363,18 +374,6 @@ class RegistrationViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    
-    @objc func deleteDidTap() {
-    }
-    
-    @objc func discloseDidTap() {
-    }
-    
-    @objc func nextDidTap() {
-        nextButton.isReady = true
-        let vc = LoginViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
-    }
+
     
 }
