@@ -74,13 +74,13 @@ Insights gained during the development process:
 - **Layout:** Integration of SnapKit simplified Auto Layout constraints, improving dynamic layout.
 - **Network Communication:** Efficient use of NetworkService, URL Session, and HTTP Requests for seamless API interaction.
 
-These lessons contribute to ongoing growth and development as a software engineer.
+These lessons contribute to my ongoing growth and development as a software engineer.
 
 ## How to Contact
 
 For inquiries, information, or contributions, feel free to reach out:
 
-- Author: **[Igor Pak]** 
+- Author: Igor Pak
 - GitHub: [GitHub Profile](https://github.com/iPakTulane)
 - Email: [ipak.tulane@gmail.com](mailto:ipak.tulane@gmail.com)
 - LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/igor-pak/)
