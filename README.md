@@ -16,9 +16,9 @@ The authentication module is a critical component of any app, ensuring users can
 
 <img width="400" height="400" align="center" alt="4_Screenshot 2023-12-08 at 12 13 13" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/caa7880a-e406-41bf-ae83-596ceb76dd70">
 
-<img width="400" height="400" align="center" alt="5_Screenshot 2023-12-08 at 12 14 54" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/e56d1ed5-5907-48b9-a609-ca8583111e93">
-
 <img width="400" height="400" align="center" alt="6_Screenshot 2023-12-08 at 12 15 26" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/d36bf084-91ff-4626-9e2e-80701129083b">
+
+<img width="400" height="400" align="center" alt="5_Screenshot 2023-12-08 at 12 14 54" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/e56d1ed5-5907-48b9-a609-ca8583111e93">
 
 ## Architectural Pattern
 
