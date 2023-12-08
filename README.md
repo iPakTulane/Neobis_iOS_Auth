@@ -2,13 +2,13 @@
 
 An iOS app centered on efficient user authentication, streamlining the login process for both existing and new users.
 
+<img width="200" height="400" align="center" alt="1_launchScreen" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/2c12d72f-7093-4954-b503-153d2e62bdb8">
+
 ## Description
 
 The authentication module is a critical component of any app, ensuring users can securely access their accounts and enjoy a seamless experience. It encompasses features such as login, registration, email confirmation, and successful login/logout actions, with a strong emphasis on data privacy and user convenience.
 
 ## Design
-
-<img width="200" height="400" align="center" alt="1_launchScreen" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/2c12d72f-7093-4954-b503-153d2e62bdb8">
 
 <img width="400" height="400" align="center" alt="2_Screenshot 2023-12-08 at 12 11 01" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/80c1b5d8-d3aa-46e5-ae10-129a8fa345eb">
 
