@@ -6,7 +6,7 @@ An iOS app centered on efficient user authentication, streamlining the login pro
 
 ## Description
 
-The authentication module is a critical component of any app, ensuring users can securely access their accounts and enjoy a seamless experience. It encompasses features such as login, registration, email confirmation, and successful login/logout actions, with a strong emphasis on data privacy and user convenience.
+The authentication module is a critical component of any app, ensuring users can securely access their accounts and enjoy a seamless experience. It encompasses features such as login, registration, and successful login/logout actions, with a strong emphasis on data privacy and user convenience.
 
 ## Design
 
@@ -15,8 +15,6 @@ The authentication module is a critical component of any app, ensuring users can
 <img width="400" height="400" align="center" alt="3_Screenshot 2023-12-08 at 12 12 44" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/67ade981-7485-49c9-ae27-7cb39abac6e6">
 
 <img width="400" height="400" align="center" alt="4_Screenshot 2023-12-08 at 12 13 13" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/caa7880a-e406-41bf-ae83-596ceb76dd70">
-
-<img width="400" height="400" align="center" alt="6_Screenshot 2023-12-08 at 12 15 26" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/d36bf084-91ff-4626-9e2e-80701129083b">
 
 <img width="400" height="400" align="center" alt="5_Screenshot 2023-12-08 at 12 14 54" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/e56d1ed5-5907-48b9-a609-ca8583111e93">
 
@@ -47,11 +45,6 @@ Navigate through the authentication module with ease using the following steps:
 - Provide your email, username, and password.
 - Ensure your password complies with the specified requisites.
 - Click "Register" to create a new account.
-- An email confirmation process adds an extra layer of security.
-
-### Confirm Your Email Address
-- View detailed information about the sent confirmation email.
-- Optionally resend the confirmation email for user convenience.
 
 ### Successful Login
 - Upon successful login, access the main application screen.
