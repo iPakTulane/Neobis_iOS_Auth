@@ -58,7 +58,12 @@ class RegistrationViewController: UIViewController {
     }
     
     @objc func backButtonPressed() {
-        navigationController?.popViewController(animated: true)
+//        navigationController?.popViewController(animated: true)
+        
+        let viewModel = UserViewModel()
+        let vc = LoginViewController(userViewModel: viewModel)
+        navigationController?.pushViewController(vc, animated: true)
+
     }
     
     @objc func nextButtonPressed() {
@@ -93,40 +98,6 @@ extension RegistrationViewController: RegistrationViewModelDelegate {
 // MARK: - UIScrollViewDelegate
 extension RegistrationViewController: UIScrollViewDelegate {
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        // Handle scroll events
-        // This method is called when the content view of the scroll view is scrolled.
-        // You can implement custom logic based on the scrolling behavior.
-
-        // Get the current vertical scroll offset
-        let yOffset = scrollView.contentOffset.y
-
-        // Example: Print the scroll offset to the console
-        print("Vertical Scroll Offset: \(yOffset)")
-
-        // Example: Change the background color based on the scroll offset
-        let maxScrollOffset: CGFloat = 100.0
-        let alpha = min(1.0, yOffset / maxScrollOffset)
-        self.view.backgroundColor = UIColor.blue.withAlphaComponent(alpha)
-        
-        // Add your custom logic here based on the scroll offset or any other scrolling behavior.
-    }
-    
-}
-
-
-extension UIView {
-    func findFirstResponder() -> UIResponder? {
-        if isFirstResponder {
-            return self
-        }
-        for subview in subviews {
-            if let responder = subview.findFirstResponder() {
-                return responder
-            }
-        }
-        return nil
-    }
 }
 
 
