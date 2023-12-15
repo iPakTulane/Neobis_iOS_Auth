@@ -45,7 +45,10 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc func yesButtonTapped() {
-        self.dismiss(animated: true)
+        let userViewModel = UserViewModel()
+        let vc = LoginViewController(userViewModel: userViewModel)
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
     
     @objc func noButtonTapped() {

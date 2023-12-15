@@ -63,8 +63,9 @@ class LoginViewController: UIViewController {
     }
     
     @objc func createButtonPressed() {
-        let viewController = RegistrationViewController(userViewModel: userViewModel)
-        navigationController?.pushViewController(viewController, animated: true)
+        let vc = RegistrationViewController(userViewModel: userViewModel)
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
 }
 
