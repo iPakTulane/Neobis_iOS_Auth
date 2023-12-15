@@ -1,15 +1,15 @@
 //
-//  WelcomeViewController.swift
+//  WelcomeView.swift
 //  Neobis_iOS_Auth
 //
-//  Created by iPak Tulane on 30/11/23.
+//  Created by iPak Tulane on 14/12/23.
 //
 
 import UIKit
 import SnapKit
 
-class WelcomeViewController: UIViewController {
-    
+class WelcomeView: UIView {
+
     lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = UIFont.boldSystemFont(ofSize: 45)
@@ -41,7 +41,6 @@ class WelcomeViewController: UIViewController {
         button.setTitle("Log out", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(logoutDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -61,21 +60,29 @@ class WelcomeViewController: UIViewController {
         return alertView
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: - INITS
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        backgroundColor = .white
         setupViews()
         setupConstraints()
-        setupAlert()
     }
     
     func setupViews() {
-        view.backgroundColor = .white
-        view.addSubview(containerView)
+        backgroundColor = .white
+        addSubview(containerView)
         containerView.addSubview(titleLabel)
         containerView.addSubview(subtitleLabel)
         containerView.addSubview(welcomeImage)
         containerView.addSubview(logoutButton)
-        view.addSubview(alertView)
+        addSubview(alertView)
     }
     
     func setupConstraints() {
@@ -129,11 +136,7 @@ class WelcomeViewController: UIViewController {
             make.right.equalToSuperview().inset(15)
             make.height.equalTo(250)
         }
-        
-        // Add targets
-        alertView.yesButton.addTarget(self, action: #selector(yesButtonTapped), for: .touchUpInside)
-        alertView.noButton.addTarget(self, action: #selector(noButtonTapped), for: .touchUpInside)
-                
+                        
         // Set actions for "Yes" and "No" buttons
         alertView.yesAction = {
             print("Yes tapped")
@@ -143,42 +146,21 @@ class WelcomeViewController: UIViewController {
         }
     }
     
-
-    @objc func logoutDidTap() {
-        showAlert()
-    }
-    
-    
     func showAlert() {
         // containerView
         containerView.backgroundColor = .darkGray
         containerView.alpha = 0.5
         // alertView
         alertView.isHidden = false
-        view.bringSubviewToFront(alertView)
+        self.bringSubviewToFront(alertView)
     }
     
-    @objc func yesButtonTapped() {
-        
-        self.dismiss(animated: true)
-        
-        let viewController = LoginViewController()
-        navigationController?.pushViewController(viewController, animated: true)
-        
-    }
-    
-    @objc func noButtonTapped() {
+    func hideAlert() {
         // containerView
-        containerView.backgroundColor = .white
-        containerView.alpha = 1.0
+        containerView.backgroundColor = .clear
+        containerView.alpha = 0.0
         // alertView
         alertView.isHidden = true
-        
-//        self.dismiss(animated: true)
-        
-//        let viewController = WelcomeViewController()
-//        navigationController?.pushViewController(viewController, animated: true)
-        
     }
     
 }

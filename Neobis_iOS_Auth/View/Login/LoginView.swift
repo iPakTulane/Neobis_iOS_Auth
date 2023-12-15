@@ -1,14 +1,15 @@
 //
-//  LoginViewController.swift
+//  LoginView.swift
 //  Neobis_iOS_Auth
 //
-//  Created by iPak Tulane on 30/11/23.
+//  Created by iPak Tulane on 14/12/23.
 //
+
 
 import UIKit
 import SnapKit
 
-class LoginViewController: UIViewController {
+class LoginView: UIView {
 
     lazy var alertLabel: UILabel = {
         let label = UILabel(frame: .zero)
@@ -88,7 +89,6 @@ class LoginViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .black
         button.layer.cornerRadius = 12
-        button.addTarget(self, action: #selector(loginDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -98,32 +98,33 @@ class LoginViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         button.backgroundColor = .clear
         button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(createDidTap), for: .touchUpInside)
         return button
     }()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: - INITS
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        backgroundColor = .white
         setupViews()
         setupConstraints()
     }
 
     func setupViews() {
-        // Setup backgorund color
-        view.backgroundColor = .white
-        // Hide back button
-        self.navigationItem.hidesBackButton = true
-        // Setup UI components
-        view.addSubview(alertLabel)
+        addSubview(alertLabel)
         alertLabel.isHidden = true
-        view.addSubview(globeImage)
-        view.addSubview(titleLabel)
-        view.addSubview(usernameTextField)
-
-        view.addSubview(passwordTextField)
-
-        view.addSubview(loginButton)
-        view.addSubview(createButton)
+        addSubview(globeImage)
+        addSubview(titleLabel)
+        addSubview(usernameTextField)
+        addSubview(passwordTextField)
+        addSubview(loginButton)
+        addSubview(createButton)
     }
     
     func setupConstraints() {
@@ -182,26 +183,10 @@ class LoginViewController: UIViewController {
             make.width.equalTo(340)
             make.height.equalTo(45)
         }
-        
-    }
-    
-    
-    @objc func loginDidTap() {
-//        let vc = WelcomeViewController(vm: viewModel, welcomeViewController: self)
-        let vc = WelcomeViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
-        vc.titleLabel.text = "Welcome back!"
-    }
-    
-    @objc func createDidTap() {
-        let viewController = RegistrationViewController()
-        navigationController?.pushViewController(viewController, animated: true)
     }
     
     
     // MARK: - Helper functions
-    
     private func createPasswordVisibilityButton() -> UIButton {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "eyeClosed"), for: .normal)
@@ -223,3 +208,5 @@ class LoginViewController: UIViewController {
 }
 
 
+                        
+                        

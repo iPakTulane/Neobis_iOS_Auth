@@ -13,11 +13,14 @@
 		BA375D592B186E3100A84675 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA375D572B186E3100A84675 /* LaunchScreen.storyboard */; };
 		BA375D622B187B4100A84675 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA375D612B187B4100A84675 /* SnapKit */; };
 		BA375D642B187B4100A84675 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BA375D632B187B4100A84675 /* SnapKit-Dynamic */; };
-		BA375D752B18A85B00A84675 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA375D742B18A85B00A84675 /* ConfirmationViewController.swift */; };
 		BA375D792B18A8A100A84675 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA375D782B18A8A100A84675 /* WelcomeViewController.swift */; };
 		BA375D7F2B18F36500A84675 /* LogoutAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA375D7E2B18F36500A84675 /* LogoutAlertView.swift */; };
-		BA375D812B1CFA7B00A84675 /* EmailAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA375D802B1CFA7B00A84675 /* EmailAlertView.swift */; };
-		BAD362352B20404F00B2164D /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD362342B20404F00B2164D /* NextButton.swift */; };
+		BA63251D2B2B142800B15CE2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63251C2B2B142800B15CE2 /* ViewModel.swift */; };
+		BA63251F2B2B15FA00B15CE2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63251E2B2B15FA00B15CE2 /* UserModel.swift */; };
+		BA6325222B2B175000B15CE2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6325212B2B175000B15CE2 /* APIService.swift */; };
+		BA6325252B2B4C6600B15CE2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6325242B2B4C6600B15CE2 /* LoginView.swift */; };
+		BA6325272B2B4CA900B15CE2 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6325262B2B4CA900B15CE2 /* RegistrationView.swift */; };
+		BA6325292B2B51DB00B15CE2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6325282B2B51DB00B15CE2 /* WelcomeView.swift */; };
 		BAD362372B21F20C00B2164D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD362362B21F20C00B2164D /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,11 +31,14 @@
 		BA375D552B186E3100A84675 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA375D582B186E3100A84675 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA375D5A2B186E3100A84675 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA375D742B18A85B00A84675 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		BA375D782B18A8A100A84675 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		BA375D7E2B18F36500A84675 /* LogoutAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutAlertView.swift; sourceTree = "<group>"; };
-		BA375D802B1CFA7B00A84675 /* EmailAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAlertView.swift; sourceTree = "<group>"; };
-		BAD362342B20404F00B2164D /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
+		BA63251C2B2B142800B15CE2 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		BA63251E2B2B15FA00B15CE2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		BA6325212B2B175000B15CE2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		BA6325242B2B4C6600B15CE2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		BA6325262B2B4CA900B15CE2 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		BA6325282B2B51DB00B15CE2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		BAD362362B21F20C00B2164D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,32 +74,22 @@
 		BA375D4B2B186E2F00A84675 /* Neobis_iOS_Auth */ = {
 			isa = PBXGroup;
 			children = (
-				BA375D4C2B186E2F00A84675 /* AppDelegate.swift */,
 				BA375D7D2B18A8DC00A84675 /* ViewModel */,
-				BA375D7C2B18A8D200A84675 /* Models */,
-				BA375D6A2B18A51600A84675 /* Login */,
-				BA375D6B2B18A51E00A84675 /* Registration */,
-				BA375D6C2B18A59F00A84675 /* Confirmation */,
-				BA375D6D2B18A66100A84675 /* Welcome */,
-				BA375D692B18A34E00A84675 /* Resources */,
+				BA375D7C2B18A8D200A84675 /* Model */,
+				BA6325232B2B197A00B15CE2 /* View */,
 				BA375D552B186E3100A84675 /* Assets.xcassets */,
 				BA375D572B186E3100A84675 /* LaunchScreen.storyboard */,
 				BA375D5A2B186E3100A84675 /* Info.plist */,
+				BA375D4C2B186E2F00A84675 /* AppDelegate.swift */,
 			);
 			path = Neobis_iOS_Auth;
-			sourceTree = "<group>";
-		};
-		BA375D692B18A34E00A84675 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		BA375D6A2B18A51600A84675 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				BA375D502B186E2F00A84675 /* LoginViewController.swift */,
+				BA6325242B2B4C6600B15CE2 /* LoginView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -102,41 +98,46 @@
 			isa = PBXGroup;
 			children = (
 				BAD362362B21F20C00B2164D /* RegistrationViewController.swift */,
-				BAD362342B20404F00B2164D /* NextButton.swift */,
+				BA6325262B2B4CA900B15CE2 /* RegistrationView.swift */,
 			);
 			path = Registration;
-			sourceTree = "<group>";
-		};
-		BA375D6C2B18A59F00A84675 /* Confirmation */ = {
-			isa = PBXGroup;
-			children = (
-				BA375D742B18A85B00A84675 /* ConfirmationViewController.swift */,
-				BA375D802B1CFA7B00A84675 /* EmailAlertView.swift */,
-			);
-			path = Confirmation;
 			sourceTree = "<group>";
 		};
 		BA375D6D2B18A66100A84675 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
 				BA375D782B18A8A100A84675 /* WelcomeViewController.swift */,
+				BA6325282B2B51DB00B15CE2 /* WelcomeView.swift */,
 				BA375D7E2B18F36500A84675 /* LogoutAlertView.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
 		};
-		BA375D7C2B18A8D200A84675 /* Models */ = {
+		BA375D7C2B18A8D200A84675 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BA63251E2B2B15FA00B15CE2 /* UserModel.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BA375D7D2B18A8DC00A84675 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BA63251C2B2B142800B15CE2 /* ViewModel.swift */,
+				BA6325212B2B175000B15CE2 /* APIService.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BA6325232B2B197A00B15CE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA375D6A2B18A51600A84675 /* Login */,
+				BA375D6B2B18A51E00A84675 /* Registration */,
+				BA375D6D2B18A66100A84675 /* Welcome */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,12 +219,15 @@
 			files = (
 				BA375D512B186E2F00A84675 /* LoginViewController.swift in Sources */,
 				BA375D792B18A8A100A84675 /* WelcomeViewController.swift in Sources */,
-				BAD362352B20404F00B2164D /* NextButton.swift in Sources */,
+				BA63251D2B2B142800B15CE2 /* ViewModel.swift in Sources */,
+				BA6325272B2B4CA900B15CE2 /* RegistrationView.swift in Sources */,
 				BA375D4D2B186E2F00A84675 /* AppDelegate.swift in Sources */,
-				BA375D752B18A85B00A84675 /* ConfirmationViewController.swift in Sources */,
 				BAD362372B21F20C00B2164D /* RegistrationViewController.swift in Sources */,
-				BA375D812B1CFA7B00A84675 /* EmailAlertView.swift in Sources */,
+				BA6325292B2B51DB00B15CE2 /* WelcomeView.swift in Sources */,
+				BA6325222B2B175000B15CE2 /* APIService.swift in Sources */,
+				BA6325252B2B4C6600B15CE2 /* LoginView.swift in Sources */,
 				BA375D7F2B18F36500A84675 /* LogoutAlertView.swift in Sources */,
+				BA63251F2B2B15FA00B15CE2 /* UserModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
