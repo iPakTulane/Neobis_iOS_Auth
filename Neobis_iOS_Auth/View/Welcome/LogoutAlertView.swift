@@ -9,10 +9,6 @@ import UIKit
 
 class LogoutAlertView: UIView {
 
-    // Callback closure for button actions
-    var yesAction: (() -> Void)?
-    var noAction: (() -> Void)?
-
     // UI components
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -48,7 +44,6 @@ class LogoutAlertView: UIView {
         button.setTitle("No, keep going", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         button.setTitleColor(.black, for: .normal)
-        button.addTarget(self, action: #selector(noButtonTapped), for: .touchUpInside)
         return button
     }()
 
@@ -120,16 +115,6 @@ class LogoutAlertView: UIView {
         // Add constraints here
         // (Adjust constraints according to your design preferences)
         super.updateConstraints()
-    }
-
-    // MARK: - Button Actions
-
-    @objc private func yesButtonTapped() {
-        yesAction?()
-    }
-
-    @objc private func noButtonTapped() {
-        noAction?()
     }
     
 }

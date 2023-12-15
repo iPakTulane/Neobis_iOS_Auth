@@ -70,9 +70,9 @@ class WelcomeView: UIView {
     }
     
     override func layoutSubviews() {
-        backgroundColor = .white
         setupViews()
         setupConstraints()
+        setupAlert()
     }
     
     func setupViews() {
@@ -128,7 +128,6 @@ class WelcomeView: UIView {
     }
     
     func setupAlert() {
-
         alertView.snp.makeConstraints{ make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview()
@@ -136,31 +135,19 @@ class WelcomeView: UIView {
             make.right.equalToSuperview().inset(15)
             make.height.equalTo(250)
         }
-                        
-        // Set actions for "Yes" and "No" buttons
-        alertView.yesAction = {
-            print("Yes tapped")
-        }
-        alertView.noAction = {
-            print("No tapped")
-        }
     }
     
     func showAlert() {
-        // containerView
         containerView.backgroundColor = .darkGray
         containerView.alpha = 0.5
-        // alertView
         alertView.isHidden = false
         self.bringSubviewToFront(alertView)
     }
     
     func hideAlert() {
-        // containerView
-        containerView.backgroundColor = .clear
-        containerView.alpha = 0.0
-        // alertView
         alertView.isHidden = true
+        containerView.backgroundColor = .white
+        containerView.alpha = 1.0
     }
     
 }

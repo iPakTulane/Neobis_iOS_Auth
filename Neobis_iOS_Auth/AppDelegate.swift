@@ -19,8 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        let viewController = ViewController(coder: NSCoder())
         //        let viewController = ViewController(vm: ViewModel())
         
-        let viewController = LoginViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
+        let userViewModel = UserViewModel()
+        let vc = LoginViewController(userViewModel: userViewModel)
+        let navigationController = UINavigationController(rootViewController: vc)
         navigationController.modalPresentationStyle = .fullScreen
         window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
