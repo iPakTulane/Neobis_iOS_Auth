@@ -45,8 +45,7 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc func yesButtonTapped() {
-        let userViewModel = UserViewModel()
-        let vc = LoginViewController(userViewModel: userViewModel)
+        let vc = LoginViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }

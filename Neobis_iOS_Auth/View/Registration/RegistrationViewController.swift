@@ -10,19 +10,9 @@ import SnapKit
 
 class RegistrationViewController: UIViewController {
     
-    let contentView = RegistrationView()
-    var userViewModel: UserViewModelProtocol!
+    let registrationView = RegistrationView()
+    var registrationViewModel = AuthViewModel()
     
-    init(userViewModel: UserViewModelProtocol) {
-        super.init(nibName: nil, bundle: nil)
-        self.userViewModel = userViewModel
-        self.userViewModel.registrationDelegate = self
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         addNavigation()
@@ -32,65 +22,52 @@ class RegistrationViewController: UIViewController {
     }
 
     func addNavigation() {
-        title = "Registration"
+        self.navigationItem.title = "Registration"
         let backButton = UIBarButtonItem(image: UIImage(named: "arrow")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(backButtonPressed))
         self.navigationItem.leftBarButtonItem = backButton
     }
     
     
     func addView() {
-        view.addSubview(contentView)
-        contentView.snp.makeConstraints{ make in
+        view.addSubview(registrationView)
+        registrationView.snp.makeConstraints{ make in
             make.edges.equalToSuperview()
         }
     }
     
     func addTargets() {
-        contentView.nextButton.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
+        registrationView.nextButton.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
     }
     
     func addDelegates() {
-        contentView.scrollView.delegate = self
-        contentView.emailTextField.delegate = self
-        contentView.usernameTextField.delegate = self
-        contentView.passwordTextField.delegate = self
-        contentView.repeatPasswordTextField.delegate = self
+        registrationView.scrollView.delegate = self
+        registrationView.emailTextField.delegate = self
+        registrationView.usernameTextField.delegate = self
+        registrationView.passwordTextField.delegate = self
+        registrationView.repeatPasswordTextField.delegate = self
     }
     
     @objc func backButtonPressed() {
+//        dismiss(animated: true)
 //        navigationController?.popViewController(animated: true)
         
-        let viewModel = UserViewModel()
-        let vc = LoginViewController(userViewModel: viewModel)
+        let vc = LoginViewController()
         navigationController?.pushViewController(vc, animated: true)
-
     }
     
     @objc func nextButtonPressed() {
 
-        guard let email = contentView.emailTextField.text,
-              let username = contentView.usernameTextField.text,
-              let password = contentView.passwordTextField.text else {
+        guard let email = registrationView.emailTextField.text,
+              let username = registrationView.usernameTextField.text,
+              let password = registrationView.passwordTextField.text
+        else {
             return
         }
-        userViewModel.registerUser(email: email, username: username, password: password)
+        registrationViewModel.register(email: email, username: username, password: password)
         
         let vc = WelcomeViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
-    }
-}
-
-
-// MARK: - RegistrationViewModelDelegate
-extension RegistrationViewController: RegistrationViewModelDelegate {
-    
-    func didRegister(user: RegisterBegin) {
-        print("Successfully registered user with email: \(user.email)")
-    }
-    
-    func didFail(with error: Error) {
-        print("Error in registration: \(error.localizedDescription)")
     }
 }
 
@@ -103,5 +80,5 @@ extension RegistrationViewController: UIScrollViewDelegate {
 
 // MARK: - UITextFieldDelegate
 extension RegistrationViewController: UITextFieldDelegate {
-        
+    
 }
