@@ -10,6 +10,8 @@ import SnapKit
 
 class RegistrationView: UIView {
 
+    var passwordValidationLabels: [UILabel] = []
+    
     // Define a variable to keep track of the active text field
     var activeTextField: UITextField?
     
@@ -182,7 +184,6 @@ class RegistrationView: UIView {
         return button
     }()
     
-    
     // MARK: - INITS
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -217,6 +218,13 @@ class RegistrationView: UIView {
         scrollView.addSubview(repeatPasswordTextField)
         
         scrollView.addSubview(nextButton)
+        
+        passwordValidationLabels = [
+                    firstRequisiteLable,
+                    secondRequisiteLable,
+                    thirdRequisiteLable,
+                    fourthRequisiteLable
+        ]
     }
     
     func setupConstraints() {
