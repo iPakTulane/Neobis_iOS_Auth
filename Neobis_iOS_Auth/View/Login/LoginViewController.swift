@@ -38,8 +38,6 @@ class LoginViewController: UIViewController {
     @objc func loginButtonPressed() {
         guard let username = loginView.usernameTextField.text,
               let password = loginView.passwordTextField.text else {
-            // Show alert label to user
-            loginView.alertLabel.isHidden = false
             print("Invalid input. Please fill in all fields.")
             return
         }
@@ -55,6 +53,8 @@ class LoginViewController: UIViewController {
                     self?.present(vc, animated: true, completion: nil)
                     
                 case .failure(let error):
+                    // Show alert label to user
+                    self?.loginView.alertLabel.isHidden = false
                     // Handle the login failure
                     print("Login failure: \(error)")
                     // You may want to update UI elements or show an alert to the user
