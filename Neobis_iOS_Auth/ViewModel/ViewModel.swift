@@ -5,6 +5,7 @@
 //  Created by iPak Tulane on 14/12/23.
 //
 
+
 import Foundation
 
 
@@ -13,7 +14,7 @@ class AuthViewModel {
     // Replace with your API base URL
     let baseURL = "http://146.190.232.227:8000"
     
-    // MARK: - LOGIN
+    //    // MARK: - LOGIN
     func login(username: String, password: String, completion: @escaping (Result<LoginResponse, Error>) -> Void) {
         // Ensure that the username and password are not empty
         guard !username.isEmpty, !password.isEmpty else {
@@ -88,9 +89,17 @@ class AuthViewModel {
     
     // MARK: - REGISTER
     func register(email: String, username: String, password: String, completion: @escaping (Result<RegisterResponse, Error>) -> Void) {
+        
         // Ensure that the email, username, and password are not empty
         guard !email.isEmpty, !username.isEmpty, !password.isEmpty else {
             completion(.failure(AuthError.invalidInput))
+            return
+        }
+        
+        // Validate password
+        let passwordValidationResult = validatePassword(password)
+        if !passwordValidationResult.isValid() {
+            completion(.failure(AuthError.invalidPassword))
             return
         }
         
@@ -158,5 +167,53 @@ class AuthViewModel {
                 completion(.failure(error))
             }
         }.resume()
+    }
+}
+
+
+// MARK: - PAssword validation
+extension AuthViewModel {
+    
+    func validatePassword(_ password: String) -> PasswordValidationResult {
+        var isValidLength = false
+        var containsLetters = false
+        var containsDigits = false
+        var containsSpecialChars = false
+        
+        // Password length validation
+        isValidLength = (8...15).contains(password.count)
+        
+        // Other validations...
+        containsLetters = containsCharacters(in: password, characterSet: .letters)
+        containsDigits = containsCharacters(in: password, characterSet: .decimalDigits)
+        containsSpecialChars = containsSpecialCharacters(in: password)
+        
+        return PasswordValidationResult(
+            isValidLength: isValidLength,
+            containsLetters: containsLetters,
+            containsDigits: containsDigits,
+            containsSpecialChars: containsSpecialChars
+        )
+    }
+    
+    func containsCharacters(in string: String, characterSet: CharacterSet) -> Bool {
+        return string.rangeOfCharacter(from: characterSet) != nil
+    }
+    
+    func containsSpecialCharacters(in string: String) -> Bool {
+        let specialCharacters = CharacterSet(charactersIn: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~")
+        return containsCharacters(in: string, characterSet: specialCharacters)
+    }
+    
+}
+
+struct PasswordValidationResult {
+    let isValidLength: Bool
+    let containsLetters: Bool
+    let containsDigits: Bool
+    let containsSpecialChars: Bool
+    
+    func isValid() -> Bool {
+        return isValidLength && containsLetters && containsDigits && containsSpecialChars
     }
 }

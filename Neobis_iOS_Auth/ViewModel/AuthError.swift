@@ -14,4 +14,5 @@ enum AuthError: Error {
     case serializationError
     case httpError(statusCode: Int)
     case emptyData
+    case invalidPassword
 }
