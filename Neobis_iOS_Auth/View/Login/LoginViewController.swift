@@ -10,21 +10,19 @@ import SnapKit
 
 class LoginViewController: UIViewController {
 
-    let loginView = LoginView()
-    var loginViewModel = AuthViewModel()
+    lazy var loginView = LoginView()
+    lazy var loginViewModel = AuthViewModel()
+    
+    override func loadView() {
+        view = loginView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addView()
+        // Hides back button
+        navigationItem.hidesBackButton = true
         addTargets()
         addDelegates()
-    }
-    
-    func addView(){
-        view.addSubview(loginView)
-        loginView.snp.makeConstraints{ make in
-            make.edges.equalToSuperview()
-        }
     }
     
     func addDelegates() {
@@ -45,17 +43,30 @@ class LoginViewController: UIViewController {
             print("Invalid input. Please fill in all fields.")
             return
         }
-        loginViewModel.login(username: username, password: password)
         
-        let vc = WelcomeViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        // Move logic to AuthViewModel
+        loginViewModel.login(username: username, password: password) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(_):
+                    // Handle the successful login
+                    let vc = WelcomeViewController()
+                    vc.modalPresentationStyle = .fullScreen
+                    self?.present(vc, animated: true, completion: nil)
+                    
+                case .failure(let error):
+                    // Handle the login failure
+                    print("Login failure: \(error)")
+                    // You may want to update UI elements or show an alert to the user
+                }
+            }
+        }
     }
+        
     
     @objc func createButtonPressed() {
         let vc = RegistrationViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -63,4 +74,3 @@ class LoginViewController: UIViewController {
 extension LoginViewController: UITextFieldDelegate {
     
 }
-

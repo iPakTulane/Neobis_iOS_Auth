@@ -21,6 +21,7 @@
 		BA6325272B2B4CA900B15CE2 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6325262B2B4CA900B15CE2 /* RegistrationView.swift */; };
 		BA6325292B2B51DB00B15CE2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6325282B2B51DB00B15CE2 /* WelcomeView.swift */; };
 		BAD362372B21F20C00B2164D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD362362B21F20C00B2164D /* RegistrationViewController.swift */; };
+		BAF86F9B2B31B49300E0F939 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF86F9A2B31B49300E0F939 /* AuthError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BA6325262B2B4CA900B15CE2 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		BA6325282B2B51DB00B15CE2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		BAD362362B21F20C00B2164D /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		BAF86F9A2B31B49300E0F939 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				BA63251C2B2B142800B15CE2 /* ViewModel.swift */,
+				BAF86F9A2B31B49300E0F939 /* AuthError.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				BA63251D2B2B142800B15CE2 /* ViewModel.swift in Sources */,
 				BA6325272B2B4CA900B15CE2 /* RegistrationView.swift in Sources */,
 				BA375D4D2B186E2F00A84675 /* AppDelegate.swift in Sources */,
+				BAF86F9B2B31B49300E0F939 /* AuthError.swift in Sources */,
 				BAD362372B21F20C00B2164D /* RegistrationViewController.swift in Sources */,
 				BA6325292B2B51DB00B15CE2 /* WelcomeView.swift in Sources */,
 				BA6325252B2B4C6600B15CE2 /* LoginView.swift in Sources */,

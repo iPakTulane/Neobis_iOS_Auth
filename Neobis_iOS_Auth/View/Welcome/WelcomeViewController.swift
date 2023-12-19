@@ -10,38 +10,26 @@ import SnapKit
 
 class WelcomeViewController: UIViewController {
  
-    let contentView = WelcomeView()
+    lazy var welcomeView = WelcomeView()
     
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func loadView() {
+        view = welcomeView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addView()
         addTargets()
     }
     
-    func addView(){
-        view.addSubview(contentView)
-        contentView.snp.makeConstraints{ make in
-            make.edges.equalToSuperview()
-        }
-    }
-    
     func addTargets() {
-        contentView.logoutButton.addTarget(self, action: #selector(logoutButtonPressed), for: .touchUpInside)
-        contentView.alertView.yesButton.addTarget(self, action: #selector(yesButtonTapped), for: .touchUpInside)
-        contentView.alertView.noButton.addTarget(self, action: #selector(noButtonTapped), for: .touchUpInside)
+        welcomeView.logoutButton.addTarget(self, action: #selector(logoutButtonPressed), for: .touchUpInside)
+        welcomeView.alertView.yesButton.addTarget(self, action: #selector(yesButtonTapped), for: .touchUpInside)
+        welcomeView.alertView.noButton.addTarget(self, action: #selector(noButtonTapped), for: .touchUpInside)
     }
 
 
     @objc func logoutButtonPressed() {
-        contentView.showAlert()
+        welcomeView.showAlert()
     }
     
     @objc func yesButtonTapped() {
@@ -51,7 +39,7 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc func noButtonTapped() {
-        contentView.hideAlert()
+        welcomeView.hideAlert()
     }
     
 }

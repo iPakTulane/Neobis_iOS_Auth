@@ -116,7 +116,6 @@ class RegistrationView: UIView {
         //        label.textColor = .systemGreen
         label.textAlignment = .left
         label.text = "• From 8 to 15 characters"
-        //        label.text = "• From 8 to 15 characters ✅"
         return label
     }()
     
@@ -127,7 +126,6 @@ class RegistrationView: UIView {
         //        label.textColor = .systemGreen
         label.textAlignment = .left
         label.text = "• Lowercase and uppercase letters"
-        //        label.text = "• Lowercase and uppercase letters ✅"
         return label
     }()
     
@@ -138,8 +136,6 @@ class RegistrationView: UIView {
         //        label.textColor = .red
         label.textAlignment = .left
         label.text = "• At least one digit"
-        //        label.text = "• At least one digit ❌"
-        //        label.text = "• At least one digit ✅"
         return label
     }()
     
@@ -150,7 +146,6 @@ class RegistrationView: UIView {
         //        label.textColor = .systemGreen
         label.textAlignment = .left
         label.text = "• At least one special symbol (!, #, *, $, ...)"
-        //        label.text = "• At least one special symbol (!, #, $) ✅"
         return label
     }()
     
