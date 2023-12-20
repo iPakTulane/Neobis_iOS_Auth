@@ -12,9 +12,9 @@ The authentication module is a critical component of any app, ensuring users can
 
 <img width="400" height="400" align="center" alt="2_Screenshot 2023-12-08 at 12 11 01" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/80c1b5d8-d3aa-46e5-ae10-129a8fa345eb">
 
-<img width="400" height="400" align="center" alt="3_Screenshot 2023-12-08 at 12 12 44" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/67ade981-7485-49c9-ae27-7cb39abac6e6">
+<img width="400" height="400" align="center" alt="Screenshot 2023-12-20 at 18 03 50" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/7ff42c3e-3f58-49dd-9784-e11d4b77cd73">
 
-<img width="400" height="400" align="center" alt="4_Screenshot 2023-12-08 at 12 13 13" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/caa7880a-e406-41bf-ae83-596ceb76dd70">
+<img width="400" height="400" align="center" alt="Screenshot 2023-12-20 at 18 05 04" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/7ff69dde-5610-446d-bc7b-63e300a1d59d">
 
 <img width="400" height="400" align="center" alt="5_Screenshot 2023-12-08 at 12 14 54" src="https://github.com/iPakTulane/Neobis_iOS_Auth/assets/117035210/e56d1ed5-5907-48b9-a609-ca8583111e93">
 
