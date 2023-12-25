@@ -84,7 +84,7 @@ For inquiries, information, or contributions, feel free to reach out:
 This project was a collaborative effort with a diverse team, each contributing their expertise to achieve success. The team members include:
 
 - **Atai Mamytov (Germany)** (Flutter Developer)
-  - GitHub: [Atay Mamytov's GitHub](https://github.com/coffee3333/Neobis_Flutter_Chapter7)
+  - GitHub: [Atai Mamytov's GitHub](https://github.com/coffee3333/Neobis_Flutter_Chapter7)
 
 - **Nargiza Satybaldieva (Kyrgyzstan)** (Python Developer)
   - Swagger Documentation: [Swagger API](http://146.190.232.227:8000/swagger/)
