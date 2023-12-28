@@ -81,7 +81,7 @@ For inquiries, information, or contributions, feel free to reach out:
 
 ## Team Composition
 
-This project was a collaborative effort with a diverse team, each contributing their expertise to achieve success. The team members include:
+This project was a collaborative effort with a diverse team, each contributing their expertise to achieve success. The team members include the author and:
 
 - **Atai Mamytov (Germany)** (Flutter Developer)
   - GitHub: [Atai Mamytov's GitHub](https://github.com/coffee3333/Neobis_Flutter_Chapter7)
